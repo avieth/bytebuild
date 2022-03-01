@@ -1277,7 +1277,7 @@ approxDiv10 !n = unsafeShiftR (0x1999999A * n) 32
 --               (# sX, bufX, 0#, lenX, Mutable buf0 off0 cs0 #)
 
 unsafeWordToWord8 :: Word -> Word8
-unsafeWordToWord8 (W# w) = W8# w
+unsafeWordToWord8 (W# w) = W8# (Exts.wordToWord8# w)
 
 -- | This function and the documentation for it are copied from
 -- Takano Akio's fast-builder library.
